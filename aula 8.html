@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula de Robótica - Circuitos Lógicos e LDR</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    .video-container {
+      margin-bottom: 20px;
+    }
+    .image-container {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Aula de Robótica - Circuitos Lógicos e LDR</h1>
+  <p><strong>Professor:</strong> Wendell</p>
+  <p><strong>Nome:</strong> Anna Clara Nunes</p>
+  <p><strong>Itinerário:</strong> Robótica</p>
+
+  <h2>Momento 1: Circuitos das Portas Lógicas</h2>
+  <p>Durante o primeiro momento da aula, realizamos circuitos com as portas lógicas AND, OR e NOT utilizando dois botões como entradas e um LED como saída. Testamos cada circuito de acordo com suas tabelas verdades.</p>
+
+  <div class="iframe">
+   <h3>Porta Lógica AND</h3>
+   <iframe src="https://assets.pinterest.com/ext/embed.html?id=953707658579974718" height="456" width="345" frameborder="0" scrolling="no" ></iframe>
+  </div>
+
+  <div class="iframe">
+    <h3>Porta Lógica OR</h3>
+    <iframe src="https://assets.pinterest.com/ext/embed.html?id=953707658579974743" height="487" width="345" frameborder="0" scrolling="no" ></iframe>
+  </div>
+
+  <div class="iframe">
+    <h3>Porta Lógica NOT</h3>
+    <iframe src="https://assets.pinterest.com/ext/embed.html?id=953707658579974759" height="499" width="345" frameborder="0" scrolling="no" ></iframe>
+  </div>
+
+  <div class="video-container">
+    <h3>Portas Lógicas - <Video></Video></h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/wjx1Es9J3sg?si=fLtQAdIfIstn-gtF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <h2>Momento 2: Circuito com LDR e LED</h2>
+  <p>No segundo momento da aula, fizemos um circuito elétrico utilizando um LDR (sensor de luz) como entrada e um LED como saída, com o Arduino processando o valor analógico. O código utilizado está abaixo:</p>
+
+  <pre>
+/*********
+ * Edusesc Taguatinga      *
+ * Professor: Wendell      *
+ * Nome: Anna Clara Nunes*
+ * Itinerário de robótica  *
+ * *********
+ */
+
+// Declaração de Variáveis e Constantes
+const int LED = 13;
+int LDR = A0;
+
+// Configurações
+void setup() {
+  pinMode(LED, OUTPUT);
+  pinMode(LDR, INPUT);
+  Serial.begin(9600);
+}
+
+// Repetições
+void loop() {
+  int luz = analogRead(LDR);
+  Serial.println(luz);
+
+  if (luz > 500) {
+    digitalWrite(LED, HIGH);
+  } else {
+    digitalWrite(LED, LOW);
+  }
+}
+  </pre>
+
+  <div class="video-container">
+    <h3>Vídeo - Circuito com LDR e LED</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/icAvsw5lMME?si=Z5uZs466PQcgulAt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  
+<br>
+    <footer>
+        <p>©Anna Clara Nunes
+        <br>1ª Série (2024) - Edusesc TGN
+        <br>Itinerário de Robótica</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Circuito com Arduino, Botão e LED</title>
+</head>
+<body>
+
+    <h1>Circuito com Arduino, Botão e LED</h1>
+
+    <p>Na aula 6, montamos um circuito simples utilizando um botão, um resistor, um LED, um Arduino, uma protoboard e jumpers.</p>
+
+    <h2>Componentes Utilizados</h2>
+    <ul>
+        <li>Arduino</li>
+        <li>Botão</li>
+        <li>Resistor</li>
+        <li>LED</li>
+        <li>Protoboard</li>
+        <li>Jumpers</li>
+    </ul>
+
+    <h2>Funcionamento do Circuito</h2>
+    <p>Quando pressionamos o botão, o LED é ligado.</p>
+
+    <h2>Código Arduino</h2>
+    <pre><code>
+        int botao = 2; // Definindo o pino do botão
+        int led = 13;  // Definindo o pino do LED
+
+        void setup() {
+          pinMode(botao, INPUT);   // Configura o pino do botão como entrada
+          pinMode(led, OUTPUT);    // Configura o pino do LED como saída
+        }
+
+        void loop() {
+          int estadoBotao = digitalRead(botao);  // Lê o estado do botão (HIGH ou LOW)
+
+          if (estadoBotao == HIGH) {  // Se o botão estiver pressionado
+            digitalWrite(led, HIGH);  // Liga o LED
+          } else {
+            digitalWrite(led, LOW);   // Desliga o LED
+          }
+        }
+    </code></pre>
+
+    <div class="carousel-item">
+      <img src="WhatsApp Image 2024-04-16 at 17.42.19.jpeg" class="d-block w-500" alt="...">
+    </div>
+
+    <div class="carousel-item">
+      <img src="WhatsApp Image 2024-04-23 at 18.57.31.jpeg" class="d-block w-500" alt="...">
+    </div>
+
+    <div class="carousel-item">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/FMDxMo0TxPs?si=00yYqJhhdPvgxB3G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <footer>
+      <p>©Anna Clara Nunes
+      <br>1ª Série (2024) - Edusesc TGN
+      <br>Itinerário de Robótica</p>
+  </footer>
+
+</body>
+</html>

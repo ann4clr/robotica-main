@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Como fazer um semáforo com arduíno</title>
+</head>
+<body>
+
+<h1>Materiais necessários:</h1>
+<p> -Placa Arduino (por exemplo, Arduino Uno)
+    -3 LEDs (vermelho, amarelo e verde)
+    -3 resistores de 220 ohms
+    -Protoboard
+    -Jumpers (fios de conexão)
+    -Fonte de alimentação para o Arduino</p>
+
+<h2>Esquemas de Ligação:</h2>
+<p>LED Vermelho:
+    Anodo (pino longo do LED) -> Resistor -> Pino digital 2 do Arduino
+    Catodo (pino curto do LED) -> Terra (GND) do Arduino
+
+    LED Amarelo:
+    Anodo -> Resistor -> Pino digital 3 do Arduino
+    Catodo -> Terra (GND) do Arduino
+
+    LED Verde:
+    Anodo -> Resistor -> Pino digital 4 do Arduino
+    Catodo -> Terra (GND) do Arduino</p>
+
+<h3>Código Arduino:</h3>
+<p>// Definindo os pinos dos LEDs
+    const int pinVermelho = 2;
+    const int pinAmarelo = 3;
+    const int pinVerde = 4;
+    
+    void setup() {
+      // Configura os pinos dos LEDs como saída
+      pinMode(pinVermelho, OUTPUT);
+      pinMode(pinAmarelo, OUTPUT);
+      pinMode(pinVerde, OUTPUT);
+    }
+    
+    void loop() {
+      // Sinal verde - Carros podem passar
+      digitalWrite(pinVerde, HIGH);
+      delay(5000); // Espera 5 segundos
+      
+      // Sinal amarelo - Preparação para o sinal vermelho
+      digitalWrite(pinVerde, LOW);
+      digitalWrite(pinAmarelo, HIGH);
+      delay(2000); // Espera 2 segundos
+      
+      // Sinal vermelho - Carros devem parar
+      digitalWrite(pinAmarelo, LOW);
+      digitalWrite(pinVermelho, HIGH);
+      delay(5000); // Espera 5 segundos
+      
+      // Reinicia o ciclo
+      digitalWrite(pinVermelho, LOW);
+    }
+    </p>
+    <h4>Como funciona:</h4>
+    <p>O código começa configurando os pinos dos LEDs como saídas no método setup(). Em seguida, no método loop(), ele acende o LED verde por 5 segundos, depois o amarelo por 2 segundos e finalmente o vermelho por 5 segundos antes de reiniciar o ciclo</p>
+
+    <h5>Montagem:</h5>
+    <p>-Conecte os LEDs aos pinos do Arduino conforme o esquema de ligação.
+       -Conecte os resistores aos anodos dos LEDs e o outro lado dos resistores ao Terra (GND) do Arduino.
+        -Carregue o código acima no Arduino usando o software Arduino IDE.
+        -Conecte a fonte de alimentação ao Arduino.
+        Agora você tem um semáforo funcional controlado por um Arduino! Você pode expandir este projeto adicionando botões para pedestres, sensores de tráfego ou até mesmo conectá-lo a um sistema de controle mais avançado. Divirta-se experimentando e explorando mais sobre o Arduino!
+        </p>
+
+        <div class="carousel-item">
+            <img src="arduinosemaforo.jpeg" class="d-block w-100" alt="...">
+          </div>
+
+          <div class="carousel-item">
+            <img src="semaforocodigo.jpeg" class="d-block w-100" alt="...">
+          </div>
+
+ <footer>
+        <p>©Anna Clara Nunes
+        <br>1ª Série (2024) - Edusesc TGN
+        <br>Itinerário de Robótica</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula sobre Circuitos Digitais e Introdução à Linguagem C#</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Circuitos Digitais e Introdução à Linguagem C#</h1>
+        <h2>1. Circuitos Digitais</h2>
+        <p>Os circuitos digitais são compostos por três partes principais:</p>
+        <ul>
+            <li><strong>Entrada</strong></li>
+            <li><strong>Processamento</strong></li>
+            <li><strong>Saída</strong></li>
+        </ul>
+        <p>Nesta aula, aprendemos sobre portas lógicas (AND, OR, NOT), tabelas verdade e a construção de circuitos elétricos utilizando chaves, fontes, resistores e LEDs.</p>
+        
+        <h3>1.1 Portas Lógicas</h3>
+        <p>As portas lógicas são os blocos fundamentais dos circuitos digitais. Aqui estão as principais portas lógicas que estudamos:</p>
+        <ul>
+            <li><strong>Porta AND</strong> (IC7408)</li>
+            <li><strong>Porta OR</strong> (IC7432)</li>
+            <li><strong>Porta NOT</strong> (IC7404)</li>
+        </ul>
+        <p>Cada porta lógica tem sua tabela verdade e pode ser representada por uma equação e um diagrama lógico.</p>
+        <div class="iframe">
+          <h3>Portas AND OR NOT</h3>
+          <iframe src="https://assets.pinterest.com/ext/embed.html?id=953707658579975773" height="560" width="345" frameborder="0" scrolling="no" ></iframe>
+         </div>
+
+        <h2>2. Introdução à Linguagem C#</h2>
+        <p>Fizemos uma introdução à linguagem C#, aplicando os conceitos aprendidos em um circuito prático com LED, resistor, protoboard e Arduino.</p>
+
+        <h3>2.1 Estrutura do Código</h3>
+        <p>O código foi dividido em três partes:</p>
+        <ul>
+            <li><strong>Parte 1:</strong> Declaração de variáveis e constantes</li>
+            <li><strong>Parte 2:</strong> Configuração (entradas, saídas, lógica e matemática)</li>
+            <li><strong>Parte 3:</strong> Repetições</li>
+        </ul>
+        
+        <h3>2.2 Código do Circuito com LED</h3>
+        <pre>
+/*
+-----------------------------
+Professor: Wendell Cruzeiro -               
+Itinerário de Robótica      -
+Curso de Arduino            -
+Edusesc Taguatinga Norte    -
+-----------------------------
+*/
+
+// Declaração de Variáveis e Constantes
+const int LED = 13;
+
+// Configurações
+void setup() {
+    pinMode(LED, OUTPUT);
+}
+
+// Repetições
+void loop() {
+    digitalWrite(LED, HIGH);
+    delay(1000); // 1 segundo
+
+    digitalWrite(LED, LOW);
+    delay(1000); // 1 segundo
+}
+        </pre>
+        
+        <h3>2.3 Explicação do Código</h3>
+        <p><strong>Declaração de Variáveis e Constantes:</strong></p>
+        <p>Declaramos a constante <code>LED</code> e atribuímos o valor <code>13</code> que representa o pino do Arduino onde o LED está conectado.</p>
+        
+        <p><strong>Configurações:</strong></p>
+        <p>No bloco <code>setup()</code>, configuramos o pino 13 como uma saída utilizando a função <code>pinMode()</code>.</p>
+        
+        <p><strong>Repetições:</strong></p>
+        <p>No bloco <code>loop()</code>, escrevemos um valor <code>HIGH</code> no pino do LED para acendê-lo, esperamos 1 segundo com a função <code>delay(1000)</code>, depois escrevemos um valor <code>LOW</code> para apagar o LED e esperamos mais 1 segundo.</p>
+        
+        <p>Este processo se repete indefinidamente, fazendo o LED piscar a cada segundo.</p>
+    </div>
+
+    <br>
+    <footer>
+        <p>©Anna Clara Nunes
+        <br>1ª Série (2024) - Edusesc TGN
+        <br>Itinerário de Robótica</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
